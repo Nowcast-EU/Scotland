@@ -30,40 +30,32 @@
 
   <style>
 
-    .page-header {
-  font-family: "Poppins", system-ui, sans-serif;
-  max-width: 1000px;
-  margin: 1.5rem auto 1rem;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.page-header h1 {
-  margin: 0;
-  font-weight: 650;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  font-size: 1.7rem;
-}
-
-.page-header .subtitle {
-  margin-top: 0.4rem;
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-  .page-header .subtitle {
-    font-size: 1.05rem;
-  }
-}
-
     html, body {
       margin: 0;
       padding: 0;
       background: #ffffff;
       font-family: system-ui, sans-serif;
     }
+
+    .logo-container {
+  position: relative; /* container for absolute positioning */
+  width: 100%;        /* full width of page */
+}
+
+.page-logo {
+  position: absolute; /* position relative to .logo-container */
+  top: 1rem;          /* distance from top of page */
+  right: 1rem;        /* distance from right edge */
+  height: 4rem;       /* adjust logo size */
+  width: auto;        /* maintain aspect ratio */
+  z-index: 10;        /* above the Flourish content */
+}
+
+  @media (max-width: 767px) {
+  .page-logo {
+    height: 2.5rem;
+  }
+}
 
     .flourish-container {
       width: 100%;
@@ -83,14 +75,6 @@
 
     /* --- Desktop view --- */
     @media (min-width: 768px) {
-
-        .page-header h1 {
-    font-size: 2.4rem;
-  }
-
-        .page-header .subtitle {
-    font-size: 1.05rem;
-  }
       
       .flourish-container {
         /* Aspect ratio: 1 wide, 1.25 tall */
@@ -156,12 +140,9 @@
 </head>
 <body>
   
-  <header class="page-header">
-  <h1>Nowcast UK Holyrood Projection</h1>
-  <p class="subtitle">
-    <b>Based on <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Scottish_Parliament_election">Scottish polling averages</a> • January 8, 2025</b>
-  </p>
-</header>
+  <div class="logo-container">
+    <img src="SC_logo.png" alt="Logo" class="page-logo">
+  </div>
 
   <div class="flourish-container">
     <iframe src="https://flo.uri.sh/visualisation/24526389/embed" scrolling="no" frameborder="0"></iframe>
