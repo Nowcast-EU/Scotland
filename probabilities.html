@@ -174,22 +174,22 @@
 <div class="tooltip" id="tooltip"></div>
 
 <script>
-  const TOTAL = 96;
-  const MAJORITY = 48;
+  const TOTAL = 129;
+  const MAJORITY = 65;
 
   const parties = [
-    { name: "LAB", color: "#e4003B", data: [11, 12, 13, 15, 18, 20, 23] },
-    { name: "CON", color: "#0087DC", data: [ 3,  4,  6,  8,  10, 11, 13] },
-    { name: "PLC", color: "#005B54", data: [27, 28, 31, 34, 35, 37, 39] },
-    { name: "GRN", color: "#6AB023", data: [ 1,  2,  3,  5,  7,  8,  11] },
-    { name: "LDM", color: "#FAA61A", data: [ 0,  0,  1,  2,  2,  3,  4] },
-    { name: "RFM", color: "#34D8EF", data: [26, 28, 30, 32, 35, 37, 39] },
+    { name: "LAB", color: "#e4003B", data: [12, 14, 16, 18, 20, 22, 24] },
+    { name: "CON", color: "#0087DC", data: [ 7,  8,  9,  10,  11, 12, 14] },
+    { name: "SNP", color: "#FFD700", data: [54, 57, 58, 60, 63, 64, 65] },
+    { name: "GRN", color: "#6AB023", data: [ 8,  9,  10,  11,  12,  13,  15] },
+    { name: "LDM", color: "#FAA61A", data: [ 6,  7,  8,  10,  11,  12,  13] },
+    { name: "RFM", color: "#34D8EF", data: [16, 17, 18, 20, 21, 23, 24] },
   ];
 
   parties.sort((a, b) => b.data[3] - a.data[3]);
 
   const domainMin = 0;
-  const domainMax = 50;
+  const domainMax = 75;
 
   function pct(val) {
     return ((val - domainMin) / (domainMax - domainMin)) * 100;
